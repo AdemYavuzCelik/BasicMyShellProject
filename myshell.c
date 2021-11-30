@@ -79,7 +79,7 @@ while(1){
 		token=strtok(NULL,s);
 		i++;
 	}
-	//burda dizi elemanı gönderdiğimiz için pass by reference oluyor ve komutlar dizisi bozuluyor bu yüzden fonksiyonda gelen stringi bir başka stringte tutmalıyım.
+	//burda dizi elemanÄ± gÃ¶nderdiÄŸimiz iÃ§in pass by reference oluyor ve komutlar dizisi bozuluyor bu yÃ¼zden fonksiyonda gelen stringi bir baÅŸka stringte tutmalÄ±yÄ±m.
 	for(i=0; i<sayac; i++){
 		komutCalistir(komutlar[i]);
 	}
