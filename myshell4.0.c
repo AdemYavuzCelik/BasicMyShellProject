@@ -10,8 +10,8 @@ void komutCalistir(char komut[]){
 	int i,sayac;
 	i=0;
 	sayac=0;
-	//Burda bşluk ekliyorum çünkü gelen komutu boşluğa göre ayırıyorum. Ne kadar boşluk o kadar kelime demek eğer sonuna boşluk eklemessem 
-	//hem ls,cat gibi direkt girilen komutları ayıramam, hemde komutlar boşluk sayısı kadar kelimeden oluşuyor.
+	//Burda bÅŸluk ekliyorum Ã§Ã¼nkÃ¼ gelen komutu boÅŸluÄŸa gÃ¶re ayÄ±rÄ±yorum. Ne kadar boÅŸluk o kadar kelime demek eÄŸer sonuna boÅŸluk eklemessem 
+	//hem ls,cat gibi direkt girilen komutlarÄ± ayÄ±ramam, hemde komutlar boÅŸluk sayÄ±sÄ± kadar kelimeden oluÅŸuyor.
 	const char s1[2] = " ";
    strncat(temp,s1,1);
    while(temp[i] != '\0'){
@@ -81,12 +81,12 @@ while(1){
    printf("Myshell>>");
    char komut[150];
    gets(komut);
-   //Komutları çizgiye göre ayırdığımdan ötürü son komutuda ayırabilmek için çizgi ekledim sonuna
+   //KomutlarÄ± Ã§izgiye gÃ¶re ayÄ±rdÄ±ÄŸÄ±mdan Ã¶tÃ¼rÃ¼ son komutuda ayÄ±rabilmek iÃ§in Ã§izgi ekledim sonuna
    const char s[2] = "|";
    strncat(komut,s,1);
    i=0;
    sayac=0;
-   //kaç tane çizgi varsa o kadar komutum, kaçtane komutum varsa o kadar dizi için yer ayırıyorum(komutlar dizi)
+   //kaÃ§ tane Ã§izgi varsa o kadar komutum, kaÃ§tane komutum varsa o kadar dizi iÃ§in yer ayÄ±rÄ±yorum(komutlar dizi)
    while(komut[i] != '\0'){
    	if(komut[i] == '|'){
    	sayac++;
@@ -94,7 +94,7 @@ while(1){
    	i++;
    }
    i=0;
-   //Burda dizide tutuyorum çünkü ayırıp direkt fonksiyona yollayınca kalan komutlar gitmiyor.
+   //Burda dizide tutuyorum Ã§Ã¼nkÃ¼ ayÄ±rÄ±p direkt fonksiyona yollayÄ±nca kalan komutlar gitmiyor.
    char *komutlar[sayac];
 	char *token;
 	token=strtok(komut,s);
@@ -105,7 +105,7 @@ while(1){
 		token=strtok(NULL,s);
 		i++;
 	}
-	//burda dizi elemanı gönderdiğimiz için pass by reference oluyor ve komutlar dizisindeki elemanlar bozuluyor bu yüzden fonksiyonda gelen stringi bir başka stringte tutmalıyım.
+	//burda dizi elemanÄ± gÃ¶nderdiÄŸimiz iÃ§in pass by reference oluyor ve komutlar dizisindeki elemanlar bozuluyor bu yÃ¼zden fonksiyonda gelen stringi bir baÅŸka stringte tutmalÄ±yÄ±m.
 	for(i=0; i<sayac; i++){
 			komutCalistir(komutlar[i]);
 	}
